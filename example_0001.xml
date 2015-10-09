@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <instruction text="Go past the building to the person"/>
+  <world>
+    <object name="R" type="robot"/>
+    <object name="P" type="person"/>
+    <object name="C" type="car"/>
+    <object name="T" type="tree"/>
+    <object name="B" type="building"/>
+    <object name="H" type="house"/>
+  </world>
+  <VP>
+    <grounding>
+      <grounding_set>
+        <func_kernel type="gaussian" weight="0.3">
+	  <object name="B" type="building"/>
+	</func_kernel>
+        <constraint type="inside">
+          <parent>
+            <object name="R" type="robot"/>
+	  </parent>
+	  <child>
+	    <object name="P" type="person"/>
+	  </child>
+	</constraint>
+      </grounding_set>
+    </grounding>
+    <VB text="go"/>
+    <NP>
+      <grounding>
+        <grounding_set>
+	  <func_kernel type="gaussian" weight="0.3">
+	    <object name="B" type="building"/>
+	  </func_kernel>
+        </grounding_set>
+      </grounding>
+      <JJ text="past"/>
+      <DT text="the"/>
+      <NN text="building"/>
+    </NP>
+    <PP>
+      <grounding>
+        <grounding_set>
+          <object name="P" type="person"/>
+        </grounding_set>
+      </grounding>
+      <TO text="to"/>
+      <NP>
+        <grounding>
+          <grounding_set>
+            <object name="P" type="person"/>
+          </grounding_set>
+        </grounding>
+        <DT text="the"/>
+        <NN text="person"/>
+      </NP>
+    </PP>
+  </VP>
+</root>
