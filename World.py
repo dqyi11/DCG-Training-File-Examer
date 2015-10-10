@@ -37,4 +37,10 @@ class World(object):
             out_str += "    " + obj.__str__()
         return out_str
     
+    def has_object(self, type, name):
+        for obj in self.objects:
+            if obj.name == name and obj.type == type:
+                return True
+        return False
+    
                 

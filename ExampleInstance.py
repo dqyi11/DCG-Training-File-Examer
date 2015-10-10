@@ -17,7 +17,6 @@ class ExampleInstance(object):
         
         
     def from_xml_file(self, filename):
-
         doc = minidom.parse(filename)
         rootnode = doc.getElementsByTagName("root")[0]
         for node in rootnode.childNodes:
@@ -37,6 +36,13 @@ class ExampleInstance(object):
         out_str += self.world.__str__()
         out_str += self.root.__str__()
         return out_str
+    
+    def exam(self):  
+        self.exam_factor(self.root)
+        
+    
+    def exam_factor(self, factor): 
+        
                 
             
             
