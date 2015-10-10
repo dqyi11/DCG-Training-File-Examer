@@ -37,12 +37,15 @@ class ExampleInstance(object):
         out_str += self.root.__str__()
         return out_str
     
-    def exam(self):  
-        self.exam_factor(self.root)
-        
+    def get_factors(self):
+        factor_list = []
+        self.scan_factor(self.root, factor_list)
+        return factor_list
     
-    def exam_factor(self, factor): 
-        
+    def scan_factor(self, factor, factor_list): 
+        factor_list.append(factor)        
+        for child_factor in factor.children:
+            self.scan_factor(child_factor, factor_list)
                 
             
             

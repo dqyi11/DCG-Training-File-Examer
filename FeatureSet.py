@@ -114,6 +114,14 @@ class FeatureSet(object):
         
     def __str__(self):
         return self.get_str()
+    
+    def has_word_feature(self, w):
+        for feature_group in self.feature_set:
+            for feature in feature_group:
+                if feature["name"] == "feature_word":
+                    if feature["type"] == w["type"] and feature["text"] == w["text"]:
+                        return True
+        return False
         
             
             
