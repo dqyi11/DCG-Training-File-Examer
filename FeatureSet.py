@@ -119,9 +119,18 @@ class FeatureSet(object):
         for feature_group in self.feature_set:
             for feature in feature_group:
                 if feature["name"] == "feature_word":
-                    if feature["type"] == w["type"] and feature["text"] == w["text"]:
+                    #print w 
+                    #print feature
+                    if feature["pos"] == w["type"] and feature["text"] == w["text"]:
                         return True
         return False
-        
+    
+    def has_object_type_feature(self, o):
+        for feature_group in self.feature_set:
+            for feature in feature_group:
+                if feature["name"] == "feature_object":
+                    if feature["object_type"] == o.type:
+                        return True
+        return False
             
             
